@@ -3,3 +3,5 @@ requests
 dotenv
 pyarrow
 streamlit
+folium
+streamlit-folium
