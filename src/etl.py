@@ -2,6 +2,9 @@ import pandas as pd
 import requests
 import streamlit as st
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 API_ID = os.getenv('APP_ID')
 PRIMARY_KEY = os.getenv('PRIMARY_KEY')
@@ -14,7 +17,7 @@ params = {
 
 def get_api_data(endpoint, params):
     try:
-        response = requests.get(endpoint, params)
+        response = requests.get(endpoint, params = params)
         response.raise_for_status()
         data = response.json()
         return data
@@ -70,8 +73,8 @@ def transform_load(data):
                 else:
                     info_estaciones['disponible'].append('No')
         
-        df = pd.DataFrame(info_estaciones)
-        return df
+    df = pd.DataFrame(info_estaciones)
+    return df
 
 def run_etl():
     data = get_api_data(ENDPOINT, params)
