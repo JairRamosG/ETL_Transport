@@ -78,7 +78,8 @@ def transform_load(data):
 
 def run_etl():
     data = get_api_data(ENDPOINT, params)
-    print(type(data))
-    print(data)
+    if data is None:
+        st.error('Verificar las credenciales de la API')
+        return None
     df = transform_load(data)
     return df
