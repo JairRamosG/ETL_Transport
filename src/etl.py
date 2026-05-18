@@ -78,5 +78,7 @@ def transform_load(data):
 
 def run_etl():
     data = get_api_data(ENDPOINT, params)
+    print(type(data))
+    print(data)
     df = transform_load(data)
     return df
