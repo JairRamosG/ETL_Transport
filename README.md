@@ -24,7 +24,7 @@ El proyecto sigue el flujo básico de un ETL:
 
 ## Características
 
-- Mapa interactivo con un marcador por cada cicloestación activa.
+- Tiene un mapa interactivo con un marcador por cada cicloestación activa.
 - Código de colores por disponibilidad:
   - **Verde** — más de 5 bicicletas disponibles
   - **Naranja** — entre 1 y 5 bicicletas disponibles
